@@ -1,0 +1,63 @@
+### **Roadmap for Data Analysis in Power BI**
+
+#### **1. Define Objectives and Metrics**
+   - **Objective:** Analyze loan performance and borrower characteristics to identify risk and trends.
+   - **Key Metrics:**
+     - Loan default rates by grade, purpose, and state.
+     - Impact of income, employment, and homeownership on loan status.
+     - Average interest rates, loan amounts, and installments by loan type.
+     - Correlation between annual income, DTI (debt-to-income ratio), and default risk.
+     - Credit and payment history trends (e.g., last credit pull date vs. loan status).
+     
+#### **2. Data Understanding and Cleaning**
+   - **Load Data:** Import the dataset with the provided columns into Power BI.
+   - **Check for Data Quality Issues:**
+     - Missing values: Inspect columns like `emp_length`, `next_payment_date`, and `loan_status` for missing or incomplete data.
+     - Data types: Ensure that columns like `issue_date`, `loan_amount`, `interest_rate`, and `annual_income` have the correct data types.
+   - **Transformations:**
+     - Date conversion: Convert date fields (`issue_date`, `last_payment_date`, etc.) to appropriate date types.
+     - Text cleaning: Standardize values for categorical columns like `home_ownership`, `application_type`, `grade`, etc.
+     - Handle missing data through appropriate imputation or exclusion strategies.
+
+#### **3. Data Exploration and Modeling**
+   - **Relationships and Correlations:**
+     - Establish relationships between tables if there are multiple data sources (e.g., linking `loan_id` with `member_id`).
+     - Use Power BI’s modeling capabilities to create calculated columns, such as `total_payment` or `interest_paid` over time.
+   - **Exploratory Data Analysis (EDA):**
+     - Visualize loan status distribution (current, fully paid, charged-off).
+     - Analyze loans by `grade` and `sub_grade`, examining their influence on default rates.
+     - Examine how `annual_income`, `dti`, and `installment` correlate with loan default risk.
+
+#### **4. Create Visualizations**
+   - **Key Dashboards:**
+     1. **Loan Performance Overview:**
+        - Display total loans, default rates, and outstanding loan amounts using cards and bar charts.
+     2. **Borrower Profiles:**
+        - Use pie charts or histograms to show `home_ownership`, `emp_length`, `annual_income` distributions.
+        - Display top purposes for loans and their performance (e.g., default rates by `purpose`).
+     3. **Loan Segmentation by State and Risk:**
+        - Use a map to visualize loan distribution and risk by `address_state`.
+        - Show trends of `interest_rate` and `loan_amount` by state or grade.
+     4. **Credit and Payment History:**
+        - Line chart comparing `issue_date` and `last_payment_date` trends.
+        - Heatmap or clustered bar charts showing payment behavior over time.
+        
+   - **Interactive Visuals:**
+     - Include slicers for filtering data by `grade`, `loan_status`, `purpose`, and `term`.
+     - Use drill-downs to analyze by sub-groups (e.g., filter by `application_type` or `home_ownership`).
+
+#### **5. Insight Generation**
+   - **Risk Analysis:**
+     - Identify high-risk segments using factors like high DTI, low `grade`, short `emp_length`, etc.
+   - **Performance Insights:**
+     - Highlight trends in loan amounts, installments, and interest rates across different time periods (`issue_date`, `next_payment_date`).
+   - **Borrower Trends:**
+     - Explore borrower characteristics (e.g., `annual_income`, `emp_title`, `home_ownership`) affecting loan performance.
+
+#### **6. Final Reporting and Presentation**
+   - **Compile Dashboard:**
+     - Organize key visuals into a concise dashboard for stakeholders.
+     - Provide narrative insights and recommendations based on the analysis (e.g., suggest strategies to mitigate risk for certain borrower profiles).
+   - **Export Reports:**
+     - Export the dashboard as a PDF or PowerPoint for sharing.
+     - Enable interactive sharing using Power BI online service.
